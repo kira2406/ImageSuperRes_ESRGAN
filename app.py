@@ -8,7 +8,7 @@ import torch
 
 def load_model():
     model = ESRGAN()
-    model.load_state_dict(torch.load('ESRGAN_generator_epoch_50.pth'))
+    model.load_state_dict(torch.load('ESRGAN_generator_epoch_50.pth', map_location=torch.device('cpu')))
     model.eval()
     return model
 
