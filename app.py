@@ -70,27 +70,26 @@ if img_upload:
 
     col1, col2 = st.columns(2)
     with col1:
-        st.header("Original Image")
+        st.subheader("Original Image")
         fig, ax = plt.subplots(figsize=(20, 20))
         original_image = tensor_image.squeeze().cpu().numpy()
         ax.imshow(np.transpose(original_image, (1, 2, 0)))
         ax.axis('off')
         st.pyplot(fig, use_container_width=True)
-
-    with col2:
-        st.header("Super-Res Image")
-        fig, ax = plt.subplots(figsize=(20,20))
-        ax.imshow(prediction1, cmap='gray')
-        ax.axis('off')
-        st.pyplot(fig, use_container_width=True)
-        st.text('FSRCNN')
+        st.subheader('ESPCNN')
         fig, ax = plt.subplots(figsize=(20,20))
         ax.imshow(prediction2, cmap='gray')
         ax.axis('off')
         st.pyplot(fig, use_container_width=True)
-        st.text('ESPCNN')
+
+    with col2:
+        st.subheader("FSRCNN")
+        fig, ax = plt.subplots(figsize=(20,20))
+        ax.imshow(prediction1, cmap='gray')
+        ax.axis('off')
+        st.pyplot(fig, use_container_width=True)
+        st.subheader('SRCNN')
         fig, ax = plt.subplots(figsize=(20,20))
         ax.imshow(prediction3, cmap='gray')
         ax.axis('off')
         st.pyplot(fig, use_container_width=True)
-        st.text('SRCNN')
