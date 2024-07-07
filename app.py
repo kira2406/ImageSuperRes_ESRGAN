@@ -51,7 +51,12 @@ def make_prediction(image, modelName = "SRCNN"):
     return opimg
 
 st.title('Image Super Resolution')
-st.text('ESPCNN | FSRCNN | SRCNN')
+st.subheader("Team 15")
+st.text("Kushwanth Parameshwaraiah")
+st.text("Sridhara Halkurike Narasimha Swamy")
+st.text("Rakshith Kumar Narasimha Murthy")
+
+st.subheader('CNN Models: ESPCNN | FSRCNN | SRCNN')
 img_upload = st.file_uploader(label="Upload image Here:", type=["png","jpg","jpeg"])
 
 
